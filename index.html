@@ -219,7 +219,7 @@
 	</table>
 	<hr>
 
-	<center><h1>Code</h1></center>
+	<center><h1>Network Architecture</h1></center>
 
 	<table align=center width=420px>
 		<center>
@@ -233,7 +233,7 @@
 		<tr>
 			<td align=center width=400px>
 				<center>
-					<td><img class="round" style="width:450px" src="./resources/FMM.png"/></td>
+					<td><img class="round" style="width:700px" src="./resources/network.png"/></td>
 				</center>
 			</td>
 		</tr>
@@ -242,17 +242,41 @@
 		<center>
 			<tr>
 				<td>
-					
+					The model takes a composite image and mask as input. Attention-based foreground-background feature map modulation layer is used to perform modulation at the feature space. This layer allows modulating the feature map of foreground according to the similarity-weighted background. Finally, the output of the network is a harmonized image.
 				</td>
 			</tr>
 		</center>
 	</table>
-	<table align=center width=800px>
-		<br>
-		<tr><center>
-			<span style="font-size:28px">&nbsp;<a href='https://github.com/Dominoer/bmvc2020_image_harmonization'>[GitHub]</a>
-			</center>
-		</span>
+	<br>
+	<hr>
+
+	<center><h1>Deep Feature Modulation Layer</h1></center>
+
+	<table align=center width=420px>
+		<center>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</center>
+	</table>
+	<table align=center width=400px>
+		<tr>
+			<td align=center width=400px>
+				<center>
+					<td><img class="round" style="width:800px" src="./resources/FMM.png"/></td>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<table align=center width=850px>
+		<center>
+			<tr>
+				<td>
+					This module first utilizes a self-attention block to calculate non-local information from the entire image. Afterwards, the foreground and background regions are separated by using a corresponding mask, and then the standard deviation of the foreground features is modulated according to that of the similarity-weighted background features. The modulation is done with the feature map modulation (FMM).
+				</td>
+			</tr>
+		</center>
 	</table>
 	<br>
 	<hr>
