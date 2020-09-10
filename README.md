@@ -1,38 +1,11 @@
-# Image Harmonization with Attention-based Deep Feature Modulation
+## <b>Webpage template</b>
 
-This code provides a pytorch implementation of "[Image Harmonization with Attention-based Deep Feature Modulation](https://www.bmvc2020-conference.com/assets/papers/0121.pdf)".
+This webpage template was made for a [colorful ECCV paper](http://richzhang.github.io/colorization/). See how the webpage looks [here](https://richzhang.github.io/webpage-template).
 
-[Project Page](https://bmvc2020-conference.com/conference/papers/paper_0121.html)
+To use this template, clone the repo:
 
-## Requirements
-- Python 3.7
-- [PyTorch](https://pytorch.org/) tested on 1.4.0
-- json
-- PIL
-- skimage
-- tqdm
-- numpy
+```
+git clone https://github.com/richzhang/webpage-template.git
+```
 
-## Dataset
-Please download the iHarmony4 dataset from [this link](https://github.com/bcmi/Image_Harmonization_Datasets).
-
-## Colab demo (coming soon)
-
-## Training
-```
-bash train.sh
-```
-## Testing
-```
-bash test.sh
-```
-## Citation
-If you find the code useful in your research, please consider citing our paper:
-```
-@InProceedings{Hao2020bmcv,
-author       = "Guoqing, Hao and Satoshi, Iizuka and Kazuhiro, Fukui",
-title        = "Image Harmonization with Attention-based Deep Feature Modulation",
-booktitle    = "The British Machine Vision Conference (BMCV)",
-year         = "2020",
-}
-```
+Copy the contents into a `gh-pages` branch of a GitHub repo. That will automatically make a webpage under address [GITHUB_USERNAME.github.io/REPO_NAME](GITHUB_USERNAME.github.io/REPO_NAME).
