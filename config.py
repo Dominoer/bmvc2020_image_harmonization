@@ -29,7 +29,7 @@ def train_parsers():
     parser.add_argument('--target_path', type=str, default='Path_to_target',
                         help='Directory to target')
     # training options
-    parser.add_argument('--gpu_ids', type=str, default='0',
+    parser.add_argument('--gpu_ids', type=str, default='-1',
                         help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
     parser.add_argument('--model_save_dir', default='./checkpoint',
                         help='Directory to save the model')
@@ -41,7 +41,5 @@ def train_parsers():
                         help="random seed for training")
     parser.add_argument('--resume', action='store_true', default=False,
                         help='resume training or not')
-    parser.add_argument('--log_dir', default='./checkpoint/tensorboard',
-                        help='Directory to save the tensorboardX')
     args = parser.parse_args()
     return args

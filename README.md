@@ -2,7 +2,7 @@
 
 This code provides a pytorch implementation of "[Image Harmonization with Attention-based Deep Feature Modulation](https://www.bmvc2020-conference.com/assets/papers/0121.pdf)".
 
-[Project Page](https://bmvc2020-conference.com/conference/papers/paper_0121.html)
+[Project Page](https://dominoer.github.io/bmvc2020_image_harmonization/)
 
 ## Requirements
 - Python 3.7

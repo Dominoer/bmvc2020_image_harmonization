@@ -1,7 +1,9 @@
 from pathlib import Path
 import os
 from PIL import Image
+import numpy as np
 from tqdm import tqdm
+import torch
 import torch.nn as nn
 from torchvision import transforms
 import model
@@ -22,7 +24,7 @@ def get_test_id(list_path):
     return img_ids
 
 model = model.Network().to(device)
-model, _ = load_checkpoint(args.model, model)
+model, _ = utils.load_checkpoint(args.model, model)
 model.eval()
 
 def get_test_data(img_path, mask_path, target_path, name):
