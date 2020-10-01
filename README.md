@@ -7,7 +7,6 @@ This code provides a pytorch implementation of "[Image Harmonization with Attent
 ## Requirements
 - Python 3.7
 - [PyTorch](https://pytorch.org/) tested on 1.4.0
-- json
 - PIL
 - skimage
 - tqdm
