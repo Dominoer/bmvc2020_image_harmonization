@@ -15,9 +15,14 @@ This code provides a pytorch implementation of "[Image Harmonization with Attent
 ## Dataset
 Please download the iHarmony4 dataset from [this link](https://github.com/bcmi/Image_Harmonization_Datasets).
 
-## Colab demo (coming soon)
+We resized all training images of HAdobe5k subset with a max size of 1024. Original images of HAdobe5k are quite large, which will slow down the data loading time. In order to speed up this process, we resize all training images of HAdobe5k dataset. 
 
+To resize the training images of HAdobe5k, specify the paths in the following script and run the script. 
+```
+python resize.py
+```
 ## Training
+Specify the paths in the train.sh script before runing the following script.
 ```
 bash train.sh
 ```

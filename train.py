@@ -34,7 +34,7 @@ optimizer = torch.optim.Adadelta(network.parameters())
 
 # restart the training process
 if args.resume is True:
-    network, optimizer = utils.load_checkpoint(model_save_path, network, optimizer=optimizer)
+    network, optimizer = utils.load_checkpoint(model_save_dir, network, optimizer=optimizer)
 
 dst = HarmDataSet(args.img_path, args.list_path, args.mask_path, args.target_path)
 
