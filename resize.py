@@ -4,11 +4,11 @@ import argparse
 from PIL import Image
 
 
-def get_test_id(list_path):
+def get_img_id(list_path):
     img_ids = [i_id.strip() for i_id in open(list_path)]
     return img_ids
 
-def get_test_data(img_path, mask_path, target_path, name):
+def resize_data(img_path, mask_path, target_path, name):
     try:
         name_prepare = name.split("_", 2)
         mask_name = name_prepare[0] + '_' + name_prepare[1]
@@ -57,7 +57,7 @@ if __name__ == '__main__':
                         help='directory for saving images')
     args = parser.parse_args()
 
-    img_ids = get_test_id(args.list_path)
+    img_ids = get_img_id(args.list_path)
 
     for img_id in tqdm(img_ids):
-        get_test_data(args.img_path, args.mask_path, args.target_path, img_id)
+        resize_data(args.img_path, args.mask_path, args.target_path, img_id)
