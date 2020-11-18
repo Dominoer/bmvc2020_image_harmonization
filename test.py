@@ -32,16 +32,20 @@ def get_test_data(img_path, mask_path, target_path, name):
     mask_name = name_prepare[0] + '_' + name_prepare[1]
     img_name = name
     target_name = name_prepare[0]
+    
     mask_file = os.path.join(mask_path, "%s.png" % mask_name)
     img_file = os.path.join(img_path, "%s" % img_name)
     target_file = os.path.join(target_path, "%s.jpg" % target_name)    
+    
     image = Image.open(img_file).convert('RGB')
     mask = Image.open(mask_file).convert('1')
     target = Image.open(target_file).convert('RGB')
+    
     dim = [256, 256]
     image = image.resize(dim, Image.BICUBIC)
     mask = mask.resize(dim, Image.BICUBIC)
     target = target.resize(dim, Image.BICUBIC)
+    
     image = transforms.ToTensor()(image)
     mask = transforms.ToTensor()(mask)
     target = transforms.ToTensor()(target)
@@ -57,9 +61,12 @@ with open("metrics.txt", "w") as f:
             image = image.to(device).unsqueeze(0)
             mask = mask.to(device).unsqueeze(0)
             target = target.to(device).unsqueeze(0)
+            
             output = model(image, mask)
+            
             output = utils.tensor2im(output, imtype=np.float32)
             target = utils.tensor2im(target, imtype=np.float32)
+            
             mse_score_op = mse(output,target)
             psnr_score_op = psnr(target, output,data_range=output.max() - output.min())
             f.write('ID:{}, MSE:{}, PSNR:{}\n'.format(img_id, mse_score_op, psnr_score_op))

@@ -28,7 +28,7 @@ def save_checkpoint(model, epoch, filename, optimizer=None, save_arch=False, par
         'state_dict': model.state_dict(),
     }
 
-    filename = filename + 'network.pth'
+    filename = os.path.join(filename, 'network.pth')
 
     if optimizer is not None:
         attributes['optimizer'] = optimizer.state_dict()

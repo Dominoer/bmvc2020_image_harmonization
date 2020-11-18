@@ -43,6 +43,7 @@ class HarmDataSet(data.Dataset):
         image = Image.open(datafiles["img"]).convert('RGB')
         mask = Image.open(datafiles["mask"]).convert('1')
         target = Image.open(datafiles["target"]).convert('RGB')
+        
         height, width = image.size
         min_size = random.randint(420, 512)
         if height > width:
@@ -51,15 +52,18 @@ class HarmDataSet(data.Dataset):
         else:
             r = min_size / height
             dim = (min_size, int(width * r))
+
         image = image.resize(dim, Image.BICUBIC)
         mask = mask.resize(dim, Image.BICUBIC)
         target = target.resize(dim, Image.BICUBIC)
+        
         img_h, img_w = image.size
         nh = random.randint(0, img_h - 256)
         nw = random.randint(0, img_w - 256)
         image = image.crop((nh, nw, (nh + 256), (nw + 256)))
         mask = mask.crop((nh, nw, (nh + 256), (nw + 256)))
         target = target.crop((nh, nw, (nh + 256), (nw + 256)))
+        
         if np.random.choice([True, False]):
             image = ImageOps.mirror(image)
             mask = ImageOps.mirror(mask)
