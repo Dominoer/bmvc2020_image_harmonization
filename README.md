@@ -27,7 +27,7 @@ Specify paths in the train.sh script before runing the script.
 bash train.sh
 ```
 ## Testing
-Here we provide a better model compared to the model used in our paper. Although the performance on the 'ALL' dataset is the same as in the paper, this model outperforms previous methods in all sub-datasets.
+Here we provide a better model compared to the model used in our paper. Although the performance on the 'ALL' dataset is the same as in the paper, this model outperforms previous methods on all sub-datasets.
 
 To download the model, run the following script.
 ```
